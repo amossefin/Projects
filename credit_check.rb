@@ -20,10 +20,14 @@ end
 
 double_numbers.each do |number|
      sum_numbers = number.to_s.split("")
-     sum = 0
-        sum_numbers.each do |number|
-            sum += number.to_i
-        end
+    #  sum = 0
+    #     sum_numbers.each do |number|
+    #         sum += number.to_i
+    #     end
+    sum = sum_numbers.map do |number|
+        number.to_i
+    end.reduce(:+)
+
     new_numbers << sum
 end
 
